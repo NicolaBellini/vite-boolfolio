@@ -6,7 +6,17 @@ export default {
 
 <template>
   <section class="hero">
-    <div class="hero-content">
+    <img class="hero-img" src="/img/hero-bg.avif" alt="" />
+
+    <img class="hero-bg" src="/img/hero-behind.avif" alt="" />
+
+    <img class="hero-main1" src="/img/hero-behind.avif" alt="" />
+
+    <img class="hero-main2" src="/img/hero-behind.avif" alt="" />
+
+    <img class="hero-main3" src="/img/hero-behind.avif" alt="" />
+
+    <div class="hero-content d-flex flex-column align-item-end">
       <h1 class="hero-title">Nicola Bellini</h1>
       <h2 class="hero-subtitle">Scopri i progetti</h2>
     </div>
@@ -17,25 +27,62 @@ export default {
 @import "../scss/typo";
 
 .hero {
+  margin-bottom: 180px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background: url("/img/hero-bg.avif") no-repeat center center;
-  background-size: cover;
+  height: 90vh;
+  // overflow: hidden;
+
   color: #000000;
   text-align: center;
 
-  &-title {
+  &-content {
+    position: absolute;
+    top: 30%;
+    left: 10%;
     font-size: 3em;
     font-weight: bold;
     margin-bottom: 0.5em;
+    opacity: 0;
   }
 
-  &-subtitle {
-    font-size: 1.5em;
-    font-weight: 300;
+  .hero-img {
+    position: absolute;
+    z-index: -2;
+    right: 10%;
+    height: 70%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .hero-bg {
+    position: absolute;
+    z-index: -1;
+    height: 90%;
+    right: 0;
+    bottom: -100px;
+  }
+  .hero-main1 {
+    position: absolute;
+    z-index: -1;
+    height: 150%;
+    left: 0;
+    bottom: -850px;
+  }
+  .hero-main2 {
+    position: absolute;
+    z-index: -1;
+    height: 110%;
+    right: 100px;
+    bottom: -1050px;
+  }
+  .hero-main3 {
+    position: absolute;
+    z-index: -1;
+    height: 110%;
+    left: 40px;
+    bottom: -1550px;
   }
 }
 </style>

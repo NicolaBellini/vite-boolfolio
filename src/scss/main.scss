@@ -1,9 +1,15 @@
+@import "./typo";
+
 * {
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-color: grey;
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+li {
+  color: rgb(80, 80, 80);
 }

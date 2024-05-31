@@ -1,5 +1,7 @@
 <script>
 import axios from "axios";
+import HeroSection from "./components/hero.vue";
+
 export default {
   data() {
     return {
@@ -22,10 +24,14 @@ export default {
   mounted() {
     this.getUrl();
   },
+  components: {
+    HeroSection,
+  },
 };
 </script>
 
 <template>
+  <HeroSection />
   <main class="container">
     <ul>
       <li v-for="project in projects" :key="project.id">{{ project.name }}</li>
@@ -33,4 +39,6 @@ export default {
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+@import "./scss/_typo.scss";
+</style>

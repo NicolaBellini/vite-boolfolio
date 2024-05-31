@@ -1,12 +1,18 @@
 <script>
 import axios from "axios";
 export default {
+  data() {
+    return {
+      projects: [],
+    };
+  },
   methods: {
     getUrl() {
       axios
         .get("http://127.0.0.1:8000/api/projects")
         .then((res) => {
-          console.log("ciao");
+          this.projects = res.data.data;
+          console.log(this.projects);
         })
         .catch((error) => {
           console.log("errore");
@@ -20,7 +26,11 @@ export default {
 </script>
 
 <template>
-  <h1>ciaos</h1>
+  <main class="container">
+    <ul>
+      <li v-for="project in projects" :key="project.id">{{ project.name }}</li>
+    </ul>
+  </main>
 </template>
 
 <style scoped></style>

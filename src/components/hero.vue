@@ -6,7 +6,7 @@ export default {
 
 <template>
   <section class="hero">
-    <img class="hero-img" src="/img/hero-bg.avif" alt="" />
+    <!-- <img class="hero-img" src="/img/hero-bg.avif" alt="" /> -->
 
     <img class="hero-bg" src="/img/hero-behind.avif" alt="" />
 

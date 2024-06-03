@@ -1,6 +1,9 @@
 <script>
-export default {};
+export default {
+  name: "header",
+};
 </script>
+
 <template>
   <header class="header">
     <img src="/img/logo.webp" alt="Logo" class="header-logo" />

@@ -8,6 +8,7 @@ import error from "./pages/error.vue";
 const router = createRouter({
   // salva nella history el browser tutta la navigazione
   history: createWebHistory(),
+
   routes: [
     {
       path: "/",

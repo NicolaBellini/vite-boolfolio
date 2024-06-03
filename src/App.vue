@@ -1,24 +1,24 @@
 <script>
 import HeroSection from "./components/hero.vue";
+import Footer from "./partials/footer.vue";
 import Header from "./partials/header.vue";
-import footer from "./partials/footer.vue";
 
 export default {
   components: {
     HeroSection,
     Header,
-    footer,
+    Footer,
   },
 };
 </script>
 
 <template>
   <Header />
-  <!-- <HeroSection /> -->
-  <main class="container">
+  <main class="container-fluid">
     <router-view></router-view>
   </main>
-  <footer />
+
+  <Footer />
 </template>
 
 <style scoped lang="scss">

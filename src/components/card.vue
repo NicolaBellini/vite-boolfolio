@@ -1,5 +1,4 @@
 <script>
-// import {};
 export default {
   props: {
     project: Object,
@@ -34,7 +33,7 @@ export default {
   padding: 70px;
   width: 40%;
   opacity: 0;
-  // width: 24rem;
+
   height: 36rem;
   border-radius: 10px;
   overflow: hidden;
@@ -104,4 +103,3 @@ export default {
   vertical-align: middle;
 }
 </style>
-<!-- <h2>ciaos</h2> -->

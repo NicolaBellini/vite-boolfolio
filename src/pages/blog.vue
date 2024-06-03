@@ -32,10 +32,15 @@ export default {
 </script>
 
 <template>
-  <h1>blog</h1>
-  <div class="container d-flex flex-wrap justify-content-around">
+  <!-- <h1>blog</h1> -->
+  <div class="container card-wrapper d-flex flex-wrap justify-content-around">
     <Card v-for="project in projects" :key="project.id" :project="project" />
   </div>
 </template>
 
-<style></style>
+<style scoped lang="scss">
+.card-wrapper {
+  min-height: 90vh;
+  padding-top: 120px;
+}
+</style>

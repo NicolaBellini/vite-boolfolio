@@ -1,30 +1,23 @@
 <script>
 import { gsap, Power3 } from "gsap";
+
 export default {
   name: "HeroSection",
   mounted() {
     gsap.to(".hero-content", {
-      // top: "30%",
-      // left: "16%",
       opacity: 1,
-      // scale: 1.6,
-      // duration: 0.4,
     });
 
     gsap.from(".hero-img", {
-      // scale: 0.5,
-      // right: "-80%",
-      ease: Power3.easeout,
-      // rigth: "-5%",
+      ease: Power3.easeOut,
       opacity: 0,
       scale: 0.8,
-      // right: 0,
       duration: 0.2,
     });
 
     gsap.from(".hero-bg", {
-      ease: Power3.easeout,
-      rigth: "15%",
+      ease: Power3.easeOut,
+      right: "15%",
       opacity: 0,
       scale: 0.8,
       right: 0,
@@ -33,26 +26,28 @@ export default {
     });
 
     gsap.from(".hero-main1", {
-      ease: Power3.easeout,
-      rigth: "15%",
+      ease: Power3.easeOut,
+      right: "15%",
       opacity: 0,
       scale: 0.8,
       right: 0,
       duration: 0.5,
       delay: 0.7,
     });
+
     gsap.from(".hero-main2", {
-      ease: Power3.easeout,
-      rigth: "15%",
+      ease: Power3.easeOut,
+      right: "15%",
       opacity: 0,
       scale: 0.8,
       right: 0,
       duration: 0.2,
       delay: 0.7,
     });
+
     gsap.from(".hero-main3", {
-      ease: Power3.easeout,
-      rigth: "15%",
+      ease: Power3.easeOut,
+      right: "15%",
       opacity: 0,
       scale: 0.8,
       right: 0,
@@ -91,7 +86,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 100vh;
   // overflow: hidden;
 
   color: #000000;
@@ -111,37 +106,41 @@ export default {
     position: absolute;
     z-index: -2;
     right: 10%;
-    height: 70%;
-    width: 100%;
+    height: 300px;
+    width: 300px;
     object-fit: cover;
   }
+
   .hero-bg {
     position: absolute;
     z-index: -1;
-    height: 90%;
+    height: 100px;
     right: 0;
     bottom: -100px;
   }
+
   .hero-main1 {
     position: absolute;
     z-index: -1;
-    height: 150%;
+    height: 300px;
     left: 0;
-    bottom: -850px;
+    // bottom: -850px;
   }
+
   .hero-main2 {
     position: absolute;
     z-index: -1;
-    height: 110%;
+    height: 300px;
     right: 100px;
-    bottom: -1050px;
+    // bottom: -1050px;
   }
+
   .hero-main3 {
     position: absolute;
     z-index: -1;
-    height: 110%;
+    height: 300px;
     left: 40px;
-    bottom: -1550px;
+    // bottom: -1550px;
   }
 }
 </style>

@@ -30,7 +30,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f8f8f8;
+  background-color: #646464;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   img {
     height: 80px;
@@ -38,10 +38,18 @@ export default {
     mix-blend-mode: multiply;
   }
   ul {
-    // align-items: center;
     height: 100%;
-    li {
-      list-style: none;
+    a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #2b2b2b;
+      }
+    }
+    .router-link-exact-active {
+      color: #2b2b2b;
     }
   }
 }

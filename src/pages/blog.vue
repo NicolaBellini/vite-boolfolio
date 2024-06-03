@@ -1,6 +1,7 @@
 <script>
 import axios from "axios";
 import Card from "../components/card.vue";
+import store from "@/store";
 
 export default {
   name: "blog",
@@ -9,16 +10,27 @@ export default {
   },
   data() {
     return {
-      projects: [],
+      store,
+      // projects: [],
     };
   },
   methods: {
-    getUrl() {
+    getUrl(apiUrl, type = "") {
       axios
-        .get("http://127.0.0.1:8000/api/projects")
+        .get(apiUrl + type)
         .then((res) => {
-          this.projects = res.data.data;
-          console.log(this.projects);
+          this.store.projects = res.data.data;
+          switch (type) {
+            case "technologies":
+              this.store.technologies = res.data;
+              break;
+            case "types":
+              this.store.types = res.data;
+              break;
+            default:
+              this.store.projects = res.data.data;
+              break;
+          }
         })
         .catch((error) => {
           console.log("errore");
@@ -26,7 +38,9 @@ export default {
     },
   },
   mounted() {
-    this.getUrl();
+    this.getUrl(this.store.apiUrl, "projects");
+    this.getUrl(this.store.apiUrl, "technologies");
+    this.getUrl(this.store.apiUrl, "types");
   },
 };
 </script>
@@ -34,7 +48,11 @@ export default {
 <template>
   <!-- <h1>blog</h1> -->
   <div class="container card-wrapper d-flex flex-wrap justify-content-around">
-    <Card v-for="project in projects" :key="project.id" :project="project" />
+    <Card
+      v-for="project in store.projects"
+      :key="project.id"
+      :project="project"
+    />
   </div>
 </template>
 

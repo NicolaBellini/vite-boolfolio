@@ -1,6 +1,7 @@
 <script>
 import sphere from "../components/sphere.vue";
 import cubes from "../components/cubes.vue";
+import technologiesBadges from "../components/technologies-badges.vue";
 import { gsap } from "gsap";
 
 export default {
@@ -8,6 +9,7 @@ export default {
   components: {
     sphere,
     cubes,
+    technologiesBadges,
   },
 
   mounted() {
@@ -51,7 +53,7 @@ export default {
   </section>
   <section class="technologies">
     <div class="d-flex justify-content-center">
-      <h3>qui vanno le tecnologie</h3>
+      <technologiesBadges />
     </div>
   </section>
 </template>

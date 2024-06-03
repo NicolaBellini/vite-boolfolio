@@ -2,6 +2,7 @@
 import HeroSection from "./components/hero.vue";
 import Footer from "./partials/footer.vue";
 import Header from "./partials/header.vue";
+import store from "./store";
 
 export default {
   components: {

@@ -21,12 +21,10 @@ export default {
     light.position.set(4, 15, 12);
     scene.add(light);
 
-    // const light2 = new THREE.PointLight(0xffffff, 1, 100);
-    // light2.position.set(0, -5, -10);
-    // scene.add(light2);
-
     const renderer = new THREE.WebGLRenderer({ canvas: this.$refs.canvas });
     renderer.setSize(window.innerWidth, window.innerHeight);
+
+    renderer.setClearColor(0x888888, 1);
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
@@ -34,10 +32,12 @@ export default {
     controls.enablePan = false;
     controls.enableZoom = false;
     controls.autoRotate = true;
+    controls.autoRotateSpeed = 4.5;
 
     const sphereGeometry = new THREE.SphereGeometry(10, 32, 30);
     const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0xf6ffff });
     const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    sphere.position.set(0, 0, -10);
     scene.add(sphere);
 
     camera.position.z = 50;

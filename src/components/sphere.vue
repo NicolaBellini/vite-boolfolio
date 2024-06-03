@@ -17,9 +17,25 @@ export default {
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
     scene.add(ambientLight);
 
-    const light = new THREE.PointLight(0xffffff, 80, 100);
-    light.position.set(4, 15, 12);
-    scene.add(light);
+    // const light = new THREE.PointLight(0xffffff, 80, 100);
+    // light.position.set(4, 15, 12);
+    // scene.add(light);
+
+    const width = 10;
+    const height = 10;
+    const intensity = 1;
+    const rectLight = new THREE.RectAreaLight(
+      0xffffff,
+      intensity,
+      width,
+      height
+    );
+    rectLight.position.set(6, 2, 4);
+    rectLight.lookAt(0, 0, 0);
+    scene.add(rectLight);
+
+    // const rectLightHelper = new RectAreaLightHelper(rectLight);
+    // rectLight.add(rectLightHelper);
 
     const renderer = new THREE.WebGLRenderer({ canvas: this.$refs.canvas });
     renderer.setSize(window.innerWidth, window.innerHeight);

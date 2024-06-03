@@ -1,6 +1,7 @@
 <script>
 import sphere from "../components/sphere.vue";
 import cubes from "../components/cubes.vue";
+import rectLight from "../components/rectLigth.vue";
 import technologiesBadges from "../components/technologies-badges.vue";
 import { gsap } from "gsap";
 
@@ -10,6 +11,7 @@ export default {
     sphere,
     cubes,
     technologiesBadges,
+    rectLight,
   },
 
   mounted() {
@@ -51,9 +53,15 @@ export default {
       <sphere />
     </div>
   </section>
+
   <section class="technologies">
     <div class="d-flex justify-content-center">
       <technologiesBadges />
+    </div>
+  </section>
+  <section class="sphere">
+    <div class="d-flex justify-content-center">
+      <rectLight />
     </div>
   </section>
 </template>

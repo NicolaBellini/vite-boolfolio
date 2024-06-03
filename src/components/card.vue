@@ -24,7 +24,7 @@ export default {
   <div
     v-for="project in store.projects"
     :key="project.id"
-    class="card fisrt-para"
+    class="card fisrt-para col-md-10"
   >
     <img
       src="https://images.unsplash.com/photo-1656618020911-1c7a937175fd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80"

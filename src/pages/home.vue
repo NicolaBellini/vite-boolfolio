@@ -112,5 +112,8 @@ export default {
       }
     }
   }
+  .technologies div {
+    height: 200px;
+  }
 }
 </style>

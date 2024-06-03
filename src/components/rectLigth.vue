@@ -27,6 +27,7 @@ export default {
       `model/${objectToRender}/scene.gltf`,
       function (gltf) {
         object = gltf.scene;
+        // object.position.set(2, -4, 10);
         scene.add(object);
       },
       function (xhr) {

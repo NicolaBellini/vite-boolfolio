@@ -30,7 +30,7 @@ export default {
       width,
       height
     );
-    rectLight.position.set(6, 2, 4);
+    rectLight.position.set(0, 10, 10);
     rectLight.lookAt(0, 0, 0);
     scene.add(rectLight);
 
@@ -53,7 +53,7 @@ export default {
     const sphereGeometry = new THREE.SphereGeometry(10, 32, 30);
     const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0xf6ffff });
     const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
-    sphere.position.set(0, 0, -10);
+    sphere.position.set(0, 0, 0);
     scene.add(sphere);
 
     camera.position.z = 50;

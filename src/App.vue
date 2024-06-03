@@ -1,35 +1,13 @@
 <script>
-import axios from "axios";
 import HeroSection from "./components/hero.vue";
-import Card from "./components/card.vue";
 import Header from "./partials/header.vue";
+import footer from "./partials/footer.vue";
 
 export default {
   components: {
     HeroSection,
-    Card,
     Header,
-  },
-  data() {
-    return {
-      projects: [],
-    };
-  },
-  methods: {
-    getUrl() {
-      axios
-        .get("http://127.0.0.1:8000/api/projects")
-        .then((res) => {
-          this.projects = res.data.data;
-          console.log(this.projects);
-        })
-        .catch((error) => {
-          console.log("errore");
-        });
-    },
-  },
-  mounted() {
-    this.getUrl();
+    footer,
   },
 };
 </script>
@@ -39,17 +17,11 @@ export default {
   <!-- <HeroSection /> -->
   <main class="container">
     <router-view></router-view>
-    <!-- <div class="container d-flex flex-wrap justify-content-around">
-      <Card v-for="project in projects" :key="project.id" :project="project" />
-    </div>
-
-    <ul>
-      <li v-for="project in projects" :key="project.id">{{ project.name }}</li>
-    </ul> -->
   </main>
+  <footer />
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 @import "./scss/_typo.scss";
 main {
   padding-top: 100px;

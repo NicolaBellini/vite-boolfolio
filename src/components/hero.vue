@@ -1,6 +1,65 @@
 <script>
+import { gsap, Power3 } from "gsap";
 export default {
   name: "HeroSection",
+  mounted() {
+    gsap.to(".hero-content", {
+      // top: "30%",
+      // left: "16%",
+      opacity: 1,
+      // scale: 1.6,
+      // duration: 0.4,
+    });
+
+    gsap.from(".hero-img", {
+      // scale: 0.5,
+      // right: "-80%",
+      ease: Power3.easeout,
+      // rigth: "-5%",
+      opacity: 0,
+      scale: 0.8,
+      // right: 0,
+      duration: 0.2,
+    });
+
+    gsap.from(".hero-bg", {
+      ease: Power3.easeout,
+      rigth: "15%",
+      opacity: 0,
+      scale: 0.8,
+      right: 0,
+      duration: 0.2,
+      delay: 0.7,
+    });
+
+    gsap.from(".hero-main1", {
+      ease: Power3.easeout,
+      rigth: "15%",
+      opacity: 0,
+      scale: 0.8,
+      right: 0,
+      duration: 0.5,
+      delay: 0.7,
+    });
+    gsap.from(".hero-main2", {
+      ease: Power3.easeout,
+      rigth: "15%",
+      opacity: 0,
+      scale: 0.8,
+      right: 0,
+      duration: 0.2,
+      delay: 0.7,
+    });
+    gsap.from(".hero-main3", {
+      ease: Power3.easeout,
+      rigth: "15%",
+      opacity: 0,
+      scale: 0.8,
+      right: 0,
+      duration: 0.3,
+      delay: 0.7,
+    });
+  },
 };
 </script>
 
@@ -18,7 +77,7 @@ export default {
 
     <div class="hero-content d-flex flex-column align-item-end">
       <h1 class="hero-title">Nicola Bellini</h1>
-      <h2 class="hero-subtitle">Scopri i progetti</h2>
+      <h2 class="hero-subtitle">home</h2>
     </div>
   </section>
 </template>

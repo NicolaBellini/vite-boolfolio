@@ -9,7 +9,7 @@ export default {
       // y: "-20",
       opacity: "1",
       duration: "1",
-      delay: "3",
+      delay: ".2",
     });
   },
 };

@@ -1,25 +1,27 @@
 <script>
+import store from "../store";
+
 export default {
   data() {
     return {
-      sponsors: [
-        { name: "Sponsor 1" },
-        { name: "Sponsor 2" },
-        { name: "Sponsor 3" },
-        // Aggiungi altri sponsor se necessario
-      ],
+      store,
     };
   },
 };
 </script>
+
 <template>
   <div class="container">
-    <h2 class="section-title">I nostri Sponsor</h2>
+    <h2 class="section-title">Skills</h2>
     <div class="row">
-      <div class="col-md-4" v-for="(sponsor, index) in sponsors" :key="index">
+      <div
+        class="col-md-4"
+        v-for="technology in store.technologies"
+        :key="technology.id"
+      >
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">{{ sponsor.name }}</h5>
+            <h5 class="card-title">{{ technology.name }}</h5>
             <p class="card-text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
               varius fermentum nunc a faucibus. Integer dignissim, ipsum ac
@@ -33,4 +35,11 @@ export default {
   </div>
 </template>
 
-<style lang="scsss" scoped></style>
+<style scoped lang="scss">
+.container {
+  padding-bottom: 70px;
+}
+.section-title {
+  margin-bottom: 30px;
+}
+</style>

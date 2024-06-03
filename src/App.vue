@@ -10,6 +10,14 @@ export default {
     Header,
     Footer,
   },
+  data() {
+    return {
+      store,
+    };
+  },
+  mounted() {
+    this.store.getUrl(this.store.apiUrl, "technologies");
+  },
 };
 </script>
 

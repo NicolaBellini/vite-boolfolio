@@ -14,7 +14,21 @@ const router = createRouter({
       name: "home",
       component: home,
     },
-
+    {
+      path: "/about",
+      name: "about",
+      component: about,
+    },
+    {
+      path: "/blog",
+      name: "blog",
+      component: blog,
+    },
+    {
+      path: "/contact",
+      name: "contact",
+      component: contact,
+    },
     {
       path: "/:pathMatch(.*)",
       name: "error",

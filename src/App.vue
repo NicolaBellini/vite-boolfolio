@@ -36,18 +36,22 @@ export default {
 
 <template>
   <Header />
-  <HeroSection />
+  <!-- <HeroSection /> -->
   <main class="container">
-    <div class="container d-flex flex-wrap justify-content-around">
+    <router-view></router-view>
+    <!-- <div class="container d-flex flex-wrap justify-content-around">
       <Card v-for="project in projects" :key="project.id" :project="project" />
     </div>
 
     <ul>
       <li v-for="project in projects" :key="project.id">{{ project.name }}</li>
-    </ul>
+    </ul> -->
   </main>
 </template>
 
 <style scoped>
 @import "./scss/_typo.scss";
+main {
+  padding-top: 100px;
+}
 </style>

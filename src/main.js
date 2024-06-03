@@ -1,8 +1,9 @@
 import "./scss/main.scss"; // Import SCSS styles
 
-import { createApp } from "vue"; // Import Vue's createApp function
-import App from "./App.vue"; // Import the root component
+import { createApp } from "vue";
+import App from "./App.vue";
 import { router } from "./router.js";
+import * as THREE from "three";
 
 // Initialize and mount the Vue application
 createApp(App).use(router).mount("#app");

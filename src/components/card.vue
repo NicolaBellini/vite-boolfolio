@@ -1,21 +1,31 @@
 <script>
+import store from "../store";
 export default {
-  props: {
-    project: Object,
+  data() {
+    return {
+      store,
+    };
   },
+  // props: {
+  //   project: Object,
+  // },
   mounted() {
-    gsap.to(".card", {
-      // y: "-20",
-      opacity: "1",
-      duration: "1",
-      delay: ".2",
-    });
+    // gsap.to(".card.fisrt-para", {
+    //   // y: "-20",
+    //   opacity: "1",
+    //   duration: "1",
+    //   delay: ".2",
+    // });
   },
 };
 </script>
 
 <template>
-  <div class="card fisrt-para">
+  <div
+    v-for="project in store.projects"
+    :key="project.id"
+    class="card fisrt-para"
+  >
     <img
       src="https://images.unsplash.com/photo-1656618020911-1c7a937175fd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80"
       alt=""
@@ -32,7 +42,7 @@ export default {
   margin-bottom: 50px;
   padding: 70px;
   width: 40%;
-  opacity: 0;
+  opacity: 1;
 
   height: 36rem;
   border-radius: 10px;

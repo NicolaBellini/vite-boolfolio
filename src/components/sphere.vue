@@ -1,39 +1,49 @@
 <script>
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
 export default {
   mounted() {
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(
-      45,
+      75,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
     );
     camera.lookAt(scene.position);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
+    let object;
+
+    // let controls2;
+
+    let objectToRender = "hamburger";
+
+    const loader = new GLTFLoader();
+
+    loader.load(
+      `model/${objectToRender}/scene.gltf`,
+      function (gltf) {
+        object = gltf.scene;
+        // object.position.set(2, -4, 10);
+        scene.add(object);
+      },
+      function (xhr) {
+        console.log((xhr.loaded / xhr.total) * 100) + "% loaded";
+      },
+      function (error) {
+        console.error(error);
+      }
+    );
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Aumenta il secondo parametro (0.5) per aumentare l'intensità
     scene.add(ambientLight);
 
-    // const light = new THREE.PointLight(0xffffff, 80, 100);
-    // light.position.set(4, 15, 12);
-    // scene.add(light);
-
-    const width = 10;
-    const height = 10;
-    const intensity = 1;
-    const rectLight = new THREE.RectAreaLight(
-      0xffffff,
-      intensity,
-      width,
-      height
-    );
-    rectLight.position.set(0, 10, 10);
-    rectLight.lookAt(0, 0, 0);
-    scene.add(rectLight);
-
+    const light = new THREE.PointLight(0xffffff, 800, 1000); // Aumenta il secondo parametro (800) per aumentare l'intensità
+    light.position.set(2, 4, 10);
+    scene.add(light);
     // const rectLightHelper = new RectAreaLightHelper(rectLight);
     // rectLight.add(rectLightHelper);
 
@@ -48,15 +58,15 @@ export default {
     controls.enablePan = false;
     controls.enableZoom = false;
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 4.5;
+    controls.autoRotateSpeed = 2.5;
 
-    const sphereGeometry = new THREE.SphereGeometry(10, 32, 30);
-    const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0xf6ffff });
-    const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
-    sphere.position.set(0, 0, 0);
-    scene.add(sphere);
+    // const sphereGeometry = new THREE.SphereGeometry(10, 32, 30);
+    // const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0xf6ffff });
+    // const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    // sphere.position.set(0, 0, -10);
+    // scene.add(sphere);
 
-    camera.position.z = 50;
+    camera.position.z = 10;
 
     const onWindowResize = () => {
       const width = window.innerWidth;

@@ -3,6 +3,7 @@ import sphere from "../components/sphere.vue";
 import cubes from "../components/cubes.vue";
 import rectLight from "../components/rectLigth.vue";
 import technologiesBadges from "../components/technologies-badges.vue";
+import type from "../components/type.vue";
 import { gsap } from "gsap";
 
 export default {
@@ -12,6 +13,7 @@ export default {
     cubes,
     technologiesBadges,
     rectLight,
+    type,
   },
 
   mounted() {
@@ -47,6 +49,9 @@ export default {
         <router-link to="/blog" class="btn">Esplora i progetti</router-link>
       </div>
     </div>
+  </section>
+  <section class="types">
+    <type />
   </section>
   <section class="sphere">
     <div class="d-flex justify-content-center">
@@ -120,8 +125,17 @@ export default {
       }
     }
   }
-  .technologies div {
-    height: 200px;
-  }
+}
+.technologies div {
+  height: 200px;
+}
+.types {
+  background-color: rgb(255, 255, 255);
+  width: 100vw;
+  transform: translateX(-12px);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

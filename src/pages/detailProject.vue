@@ -28,6 +28,27 @@ export default {
         });
     },
   },
+  computed: {
+    type() {
+      if (!this.project.type) {
+        return "Progetto non associato a nessuna tipologia";
+      } else {
+        return "Tipologia: " + this.project.type.name;
+      }
+    },
+    technologies() {
+      if (!this.project.technologies) {
+        return "Progetto non associato a nessuna tecnologia";
+      } else {
+        return (
+          "Tecnologia: " +
+          this.project.technologies
+            .map((technology) => technology.name)
+            .join(", ")
+        );
+      }
+    },
+  },
   mounted() {
     this.getDetailApi(this.$route.params.slug);
   },
@@ -45,8 +66,11 @@ export default {
       />
       <div class="card-body" ref="cardBody">
         <h1 class="card-title">{{ project.name }}</h1>
-        <p class="card-text">{{ project.description }}</p>
-        <p class="card-text"><strong>Argomento:</strong> {{ project.topic }}</p>
+        <p class="card-text">{{ type }}</p>
+        <p class="card-text">
+          {{ technologies }}
+        </p>
+        <p class="card-text">{{ project.topic }}</p>
       </div>
     </div>
     <div v-else class="text-center"><h3>loading</h3></div>

@@ -27,11 +27,11 @@ export default {
     class="card fisrt-para col-md-10"
   >
     <router-link
-      class="w-100 h-100 position-relative z-3"
+      class="w-100 h-100 my_link position-absolute z-3"
       :to="{ name: 'detailProject', params: { slug: project.slug } }"
     />
     <img
-      src="https://images.unsplash.com/photo-1656618020911-1c7a937175fd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80"
+      src="https://images.unsplash.com/photo-1618423771908-454889be674e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       alt=""
     />
     <div class="card-content">
@@ -45,7 +45,7 @@ export default {
 .card {
   margin-bottom: 50px;
   padding: 70px;
-  width: 40%;
+  width: 45%;
   opacity: 1;
 
   height: 36rem;
@@ -55,6 +55,9 @@ export default {
   position: relative;
   color: white;
   box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+  .my_link {
+    min-width: 200px;
+  }
 
   img {
     position: absolute;
@@ -63,13 +66,14 @@ export default {
     height: 100%;
     top: 0;
     left: 0;
-    opacity: 0.9;
+    opacity: 0.6;
     transition: opacity 0.2s ease-out;
   }
 
   h2 {
     position: absolute;
     inset: auto auto 30px 30px;
+    font-weight: 800 !important;
     margin: 0;
     color: white;
     transition: inset 0.3s 0.3s ease-out;
@@ -109,7 +113,7 @@ export default {
 
   &:hover img {
     transition: opacity 0.3s ease-in;
-    opacity: 1;
+    opacity: 1.4;
   }
 }
 

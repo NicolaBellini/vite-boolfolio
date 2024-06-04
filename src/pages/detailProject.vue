@@ -3,13 +3,26 @@ import axios from "axios";
 import store from "@/store";
 export default {
   data() {
-    return {};
+    return {
+      store,
+      project: {},
+    };
   },
   methods: {
-    // getApi()
+    getApi(slug) {
+      axios
+        .get(this.store.apiUrl + "project-detail/" + slug)
+        .then((res) => {
+          this.project = res.data;
+          console.log(this.project);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    },
   },
   mounted() {
-    // this.getApi(this.$route.params.slug);
+    this.getApi(this.$route.params.slug);
     console.log(this.$route.params.slug);
   },
 };

@@ -26,13 +26,17 @@ export default {
     :key="project.id"
     class="card fisrt-para col-md-10"
   >
+    <router-link
+      class="w-100 h-100 position-relative z-3"
+      :to="{ name: 'detailProject', params: { slug: project.slug } }"
+    />
     <img
       src="https://images.unsplash.com/photo-1656618020911-1c7a937175fd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80"
       alt=""
     />
     <div class="card-content">
       <h2>{{ project.name }}</h2>
-      <p>Argomento: {{ project.topic }}</p>
+      <p>Argomento: {{ project.slug }}</p>
     </div>
   </div>
 </template>

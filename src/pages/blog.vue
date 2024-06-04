@@ -45,26 +45,12 @@ export default {
     this.store.getUrl(this.store.apiUrl, "technologies");
     this.store.getUrl(this.store.apiUrl, "types");
     this.store.getUrl(this.store.apiUrl, "projects");
+    console.log(this.store.projects);
   },
 };
 </script>
 
 <template>
-  <div>
-    <p v-for="type in store.types" :key="type.id" class="card fisrt-para">
-      {{ type.name }}
-    </p>
-  </div>
-  <div>
-    <p
-      v-for="technology in store.technologies"
-      :key="technology.id"
-      class="card fisrt-para"
-    >
-      {{ technology.name }}
-    </p>
-  </div>
-
   <div class="container card-wrapper d-flex flex-wrap justify-content-around">
     <Card />
   </div>

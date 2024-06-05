@@ -42,9 +42,11 @@ export default {
           </router-link>
           <ul>
             <li v-for="project in type.projects" :key="project.id">
-              <span>
+              <router-link
+                :to="{ name: 'detailProject', params: { slug: project.slug } }"
+              >
                 {{ project.name }}
-              </span>
+              </router-link>
             </li>
           </ul>
         </swiper-slide>
@@ -58,11 +60,17 @@ export default {
 <style scoped lang="scss">
 .slide {
   min-height: 200px;
+  a {
+    color: grey;
+    font-size: 3rem;
+  }
   ul {
     li {
       list-style: none;
-      span {
+      a {
         font-weight: 100;
+        color: grey;
+        font-size: 1.3rem;
       }
     }
   }

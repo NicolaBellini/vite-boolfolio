@@ -137,5 +137,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  li {
+    color: grey;
+  }
 }
 </style>

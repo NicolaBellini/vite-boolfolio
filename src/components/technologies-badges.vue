@@ -34,8 +34,16 @@ export default {
           class="slide"
           v-for="technology in store.technologies"
           :key="technology.id"
-          >{{ technology.name }}</swiper-slide
         >
+          <router-link
+            :to="{
+              name: 'technologyProjects',
+              params: { id: technology.id },
+            }"
+          >
+            {{ technology.name }}
+          </router-link>
+        </swiper-slide>
       </swiper>
       <div class="gradient-left"></div>
       <div class="gradient-right"></div>

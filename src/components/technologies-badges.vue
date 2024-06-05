@@ -64,6 +64,9 @@ export default {
 .row {
   overflow: hidden;
   color: rgb(88, 88, 88);
+  a {
+    color: grey;
+  }
 }
 
 .gradient-left,

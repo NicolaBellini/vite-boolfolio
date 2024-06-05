@@ -12,6 +12,11 @@ export default {
       text: "xasxcs dcscsacs cdacas",
       sending: false,
       sent: false,
+      errors: {
+        name: "a",
+        mail: "a",
+        text: "a",
+      },
     };
   },
   methods: {
@@ -27,9 +32,17 @@ export default {
       axios
         .post(store.apiUrl + "send-mail", data)
         .then((res) => {
-          (this.sending = false),
-            (this.sent = res.data.success),
-            console.log(res.data.success);
+          (this.sending = false), (this.sent = res.data.success);
+          if (!res.data.success) {
+            this.errors = res.data.errors;
+          } else {
+            this.errors = {
+              name: "",
+              mail: "",
+              text: "",
+            };
+          }
+          console.log(res.data);
         })
         .catch((error) => {
           (this.sent = true), (this.sending = false);
@@ -76,14 +89,23 @@ export default {
           <div class="form-group">
             <label for="name">Nome</label>
             <input v-model="name" type="text" id="name" name="name" />
+            <p class="text-start ms-3 text-danger">
+              {{ errors.name?.toString() }}
+            </p>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
             <input v-model="mail" type="email" id="mail" name="email" />
+            <p class="text-start ms-3 text-danger">
+              {{ errors.mail?.toString() }}
+            </p>
           </div>
           <div class="form-group">
             <label for="message">Messaggio</label>
             <textarea v-model="text" id="message" name="text"></textarea>
+            <p class="text-start ms-3 text-danger">
+              {{ errors.text?.toString() }}
+            </p>
           </div>
           <button type="submit" class="submit-btn">Invia</button>
         </form>

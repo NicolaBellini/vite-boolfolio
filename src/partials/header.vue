@@ -6,9 +6,9 @@ export default {
 
 <template>
   <header class="header">
-    <div class="logo w-50">
+    <router-link class="logo w-50" :to="{ name: 'home' }">
       <img src="/img/logo.webp" alt="Logo" class="header-logo" />
-    </div>
+    </router-link>
     <div class="menu w-50 h-100">
       <ul class="d-flex justify-content-around align-items-center">
         <router-link :to="{ name: 'home' }">HOME</router-link>

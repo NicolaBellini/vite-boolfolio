@@ -17,6 +17,8 @@ export default {
   },
   mounted() {
     this.store.getUrl(this.store.apiUrl, "technologies");
+    this.store.getUrl(this.store.apiUrl, "types");
+    console.log(this.store.types);
   },
 };
 </script>
@@ -34,5 +36,6 @@ export default {
 @import "./scss/_typo.scss";
 main {
   padding-top: 100px;
+  min-height: 90vh;
 }
 </style>

@@ -4,6 +4,7 @@ import about from "./pages/about.vue";
 import blog from "./pages/blog.vue";
 import contact from "./pages/contact.vue";
 import detailProject from "./pages/detailProject.vue";
+import typeProjects from "./pages/typeProjects.vue";
 import error from "./pages/error.vue";
 
 const router = createRouter({
@@ -35,6 +36,11 @@ const router = createRouter({
       path: "/detailProject/:slug",
       name: "detailProject",
       component: detailProject,
+    },
+    {
+      path: "/typeProjects/:id",
+      name: "typeProjects",
+      component: typeProjects,
     },
     {
       path: "/:pathMatch(.*)",

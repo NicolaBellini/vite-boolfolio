@@ -114,14 +114,14 @@ export default {
       display: inline-block;
       padding: 12px 30px;
       font-size: 1rem;
-      background-color: #007bff;
+      background-color: #303030;
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
       transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: #0056b3;
+        background-color: #929292;
       }
     }
   }
@@ -133,7 +133,7 @@ export default {
   background-color: rgb(255, 255, 255);
   width: 100vw;
   transform: translateX(-12px);
-  height: 200px;
+  // height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;

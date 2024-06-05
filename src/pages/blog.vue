@@ -14,33 +14,7 @@ export default {
       // projects: [],
     };
   },
-  methods: {
-    // getUrl(apiUrl, type = "") {
-    //   axios
-    //     .get(apiUrl + type)
-    //     .then((res) => {
-    //       // this.store.projects = res.data.data;
-    //       switch (type) {
-    //         case "technologies":
-    //           this.store.technologies = res.data;
-    //           break;
-    //         case "types":
-    //           this.store.types = res.data;
-    //           break;
-    //         default:
-    //           this.store.projects = res.data.data;
-    //           break;
-    //       }
-    //       console.log(this.store.projects);
-    //       console.log(this.store.types);
-    //       console.log(this.store.technologies);
-    //     })
-    //     .catch((error) => {
-    //       error = error;
-    //       console.log(error.message);
-    //     });
-    // },
-  },
+  methods: {},
   mounted() {
     this.store.getUrl(this.store.apiUrl, "technologies");
     this.store.getUrl(this.store.apiUrl, "types");

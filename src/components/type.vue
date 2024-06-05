@@ -1,45 +1,70 @@
-<template>
-  <div class="card-container">
-    <div class="card">
-      <h3 class="title">Titolo 1</h3>
-    </div>
+<script>
+import store from "../store";
 
-    <div class="card">
-      <h3 class="title">Titolo 2</h3>
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+import "swiper/css";
+
+export default {
+  data() {
+    return {
+      store,
+    };
+  },
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+};
+</script>
+<template>
+  <div class="container">
+    <!-- <h2 class="section-title">Skills</h2> -->
+    <div class="row position-relative">
+      <swiper
+        :slides-per-view="1"
+        :space-between="50"
+        :loop="true"
+        @swiper="onSwiper"
+        @slideChange="onSlideChange"
+      >
+        <!-- <swiper-slide></swiper-slide> -->
+        <swiper-slide
+          class="slide d-flex justify-content-center align-items-center"
+          v-for="type in store.types.types"
+          :key="type.id"
+        >
+          <router-link
+            class="ms-4"
+            :to="{ name: 'typeProjects', params: { id: type.id } }"
+          >
+            {{ type.name }}
+          </router-link>
+          <ul>
+            <li v-for="project in type.projects" :key="project.id">
+              <span>
+                {{ project.name }}
+              </span>
+            </li>
+          </ul>
+        </swiper-slide>
+      </swiper>
+      <div class="gradient-left"></div>
+      <div class="gradient-right"></div>
     </div>
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style scoped lang="scss">
-.card-container {
-  display: flex;
-  width: 100%;
-
-  justify-content: space-around;
-  align-items: center;
-}
-
-.card {
-  background-color: #2e2e2e52;
-
-  padding: 20px;
-  height: 150px;
-  border-radius: 5px;
-
-  width: 40%;
-}
-
-.title {
-  font-size: 18px;
-
-  font-weight: bold;
-
-  margin: 0;
-
-  color: #333;
+.slide {
+  min-height: 200px;
+  ul {
+    li {
+      list-style: none;
+      span {
+        font-weight: 100;
+      }
+    }
+  }
 }
 </style>

@@ -12,7 +12,7 @@ export default {
     <div class="menu w-50 h-100">
       <ul class="d-flex justify-content-around align-items-center">
         <router-link :to="{ name: 'home' }">HOME</router-link>
-        <router-link :to="{ name: 'blog' }">BLOG</router-link>
+        <router-link :to="{ name: 'blog' }">PROJECTS</router-link>
         <router-link :to="{ name: 'about' }">ABOUT</router-link>
         <router-link :to="{ name: 'contact' }">CONTACTS</router-link>
       </ul>

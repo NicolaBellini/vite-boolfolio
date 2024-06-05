@@ -59,7 +59,7 @@ export default {
   <div class="container mt-5 mb-5">
     <div v-if="!loading" class="card border-0 shadow-sm">
       <img
-        :src="`http://127.0.0.1:8000${project.image}`"
+        :src="project.image"
         class="card-img-top"
         alt="Project Image"
         ref="projectImage"

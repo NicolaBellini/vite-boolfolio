@@ -1,7 +1,37 @@
 <script>
 import { gsap } from "gsap";
+import axios from "axios";
+import store from "../store";
+
 export default {
   name: "contact",
+  data() {
+    return {
+      name: "nico",
+      mail: "dscsdc@dcsd.com",
+      text: "xasxcs dcscsacs cdacas",
+      // store,
+    };
+  },
+  methods: {
+    sendMail() {
+      // console.log("send");
+      const data = {
+        name: this.name,
+        mail: this.mail,
+        text: this.text,
+      };
+      // console.log(data);
+      axios
+        .post(store.apiUrl + "send-mail", data)
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    },
+  },
 
   mounted() {
     gsap.from(".contact-title", {
@@ -35,18 +65,18 @@ export default {
   <section class="contact">
     <div class="container">
       <h1 class="contact-title">Mettiamoci in contatto</h1>
-      <form class="contact-form">
+      <form @submit.prevent="sendMail" class="contact-form">
         <div class="form-group">
           <label for="name">Nome</label>
-          <input type="text" id="name" name="name" required />
+          <input v-model="name" type="text" id="name" name="name" required />
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
+          <input v-model="mail" type="email" id="mail" name="email" required />
         </div>
         <div class="form-group">
           <label for="message">Messaggio</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea v-model="text" id="message" name="text" required></textarea>
         </div>
         <button type="submit" class="submit-btn">Invia</button>
       </form>

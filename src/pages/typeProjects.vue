@@ -1,6 +1,10 @@
 <script>
 import axios from "axios";
 import store from "@/store";
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+import "swiper/css";
+
 import { gsap } from "gsap";
 export default {
   data() {
@@ -9,6 +13,10 @@ export default {
       projects: [],
       loading: true,
     };
+  },
+  components: {
+    Swiper,
+    SwiperSlide,
   },
 
   methods: {
@@ -34,35 +42,38 @@ export default {
   },
 };
 </script>
-
 <template>
   <div class="container mt-5 mb-5">
-    <div
-      class="card border-0 shadow-sm"
-      v-for="project in projects"
-      :key="project.id"
+    <swiper
+      :slides-per-view="1"
+      :space-between="50"
+      :loop="true"
+      @swiper="onSwiper"
+      @slideChange="onSlideChange"
     >
-      <!-- <img
-        :src="project.image"
-        class="card-img-top"
-        alt="Project Image"
-        ref="projectImage"
-      /> -->
-      <div class="card-body" ref="cardBody">
-        <h1 class="card-title">{{ project.name }}</h1>
-        <p class="card-text">{{ type }}</p>
-        <p class="card-text">
-          {{ technologies }}
-        </p>
-        <p class="card-text">{{ project.topic }}</p>
-      </div>
-    </div>
+      <swiper-slide class="slide" v-for="project in projects" :key="project.id">
+        <img
+          :src="project.image"
+          class="card-img-top"
+          alt="Project Image"
+          ref="projectImage"
+        />
+        <div class="project-details d-flex flex-column">
+          <h2 class="project-name">{{ project.name }}</h2>
+          <h2 class="project-name">{{ project.topic }}</h2>
+
+          <!-- Aggiungi altri dettagli del progetto qui -->
+        </div>
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
 
 <style scoped>
 .card-img-top {
   width: 100%;
+  object-fit: contain;
+  max-height: 50vh;
   height: auto;
 }
 .card-title {

@@ -7,15 +7,15 @@ export default {
   name: "contact",
   data() {
     return {
-      name: "nico",
-      mail: "dscsdc@dcsd.com",
-      text: "xasxcs dcscsacs cdacas",
+      name: "",
+      mail: "",
+      text: "",
       sending: false,
       sent: false,
       errors: {
-        name: "a",
-        mail: "a",
-        text: "a",
+        name: "",
+        mail: "",
+        text: "",
       },
     };
   },

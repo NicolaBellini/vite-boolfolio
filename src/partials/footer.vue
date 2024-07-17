@@ -1,6 +1,7 @@
 <script>
 export default {};
 </script>
+
 <template>
   <footer>
     <div>
@@ -11,7 +12,7 @@ export default {};
             <ul class="footer-nav">
               <router-link :to="{ name: 'home' }">HOME</router-link>
               <router-link :to="{ name: 'blog' }">BLOG</router-link>
-              <router-link :to="{ name: 'about' }">ABOUT</router-link>
+
               <router-link :to="{ name: 'contact' }">CONTACTS</router-link>
             </ul>
           </nav>
